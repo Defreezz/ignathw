@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import style from "./HW2.module.css"
+
 
 // types
 export type AffairPriorityType = "high" | "middle" | "low"
@@ -27,13 +27,10 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): a
     switch (filter) {
         case "high":
             return affairs.filter(a => a.priority === "high")
-            break;
         case "middle":
             return affairs.filter(a => a.priority === "middle")
-            break;
         case "low":
             return affairs.filter(a => a.priority === "low")
-            break;
         default: return affairs
     }
 }
