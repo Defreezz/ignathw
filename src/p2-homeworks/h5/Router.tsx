@@ -8,8 +8,8 @@ import Error404 from "./pages/Error404";
 
 
 export const PATH = {
-    PRE_JUNIOR: '/pre-junior',
-    JUNIOR: '/junior',
+    PRE_JUNIOR: 'pre-junior',
+    JUNIOR: 'junior',
     JUNIOR_PLUS:'junior-plus',
     ERROR: '/*',
     MAIN:'/',
