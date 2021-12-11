@@ -1,13 +1,19 @@
 import React from 'react'
+import {Route, Routes} from "react-router-dom";
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
     // add paths
 }
 
-function Routes() {
+export function Routers() {
     return (
         <div>
+            <Routes>
+                <Route>
+
+                </Route>
+            </Routes>
             {/*Switch выбирает первый подходящий роут*/}
             {/*<Switch>*/}
 
@@ -26,4 +32,4 @@ function Routes() {
     )
 }
 
-export default Routes
+
