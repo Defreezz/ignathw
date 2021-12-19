@@ -1,0 +1,23 @@
+.wrapper{
+    background-color: white;
+}
+
+.Err404 {
+    color: #ee0e0e;
+
+
+    align-items: center;
+    justify-content: center;
+   min-height: 800px;
+    background: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif")no-repeat;
+    background-size: auto;
+    background-position: center;
+
+}
+.text {
+    color: #282c34;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+}
