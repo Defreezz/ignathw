@@ -22,7 +22,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setName(e.currentTarget.value) // need to fix
     }
     const addUser = () => {
-        //debugger
+        debugger
         if (/^([a-zA-Zа-яА-Я]{2,})$/.test(name)) {
             addUserCallback(name)
             setName("")
