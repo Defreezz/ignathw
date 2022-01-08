@@ -6,7 +6,6 @@ import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 const arr:string[] = ['x', 'y', 'z']
 
 function HW7() {
-    debugger
     const [value, onChangeOption] = useState<string>(arr[1])
 
     return (

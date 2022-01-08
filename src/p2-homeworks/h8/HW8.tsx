@@ -32,7 +32,7 @@ function HW8() {
     const check18 = () => setPeople(homeWorkReducer(initialPeople, check18AC()))
 
     return (
-        <div>
+        <div style={{minHeight:"250px", position:"relative"}}>
             <hr/>
             homeworks 8
 
@@ -40,15 +40,15 @@ function HW8() {
           <ul style={{maxWidth:"150px",listStyle:"none"	}}>
               {finalPeople}
           </ul>
-            <span>
+            <span style={{position:"absolute",bottom:"0px"}}>
                 <SuperButton onClick={sortUp}>sort up</SuperButton>
                 <SuperButton onClick={sortDown}>sort down</SuperButton>
                 <SuperButton onClick={check18}>check 18</SuperButton>
             </span>
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
-            <hr/>
+            {/*<hr/>*/}
+            {/*/!*для личного творчества, могу проверить*!/*/}
+            {/*/!*<AlternativePeople/>*!/*/}
+            {/*<hr/>*/}
         </div>
     )
 }
