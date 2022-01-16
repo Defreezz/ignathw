@@ -1,4 +1,4 @@
-import React, {SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent, Dispatch, SetStateAction} from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes} from 'react'
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 

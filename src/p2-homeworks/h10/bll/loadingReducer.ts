@@ -1,14 +1,39 @@
-const initState = {
 
+export type InitStateType = {
+    isLoading:boolean
+}
+const initState = {
+    isLoading:false
 }
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
+export const loadingReducer = (state:InitStateType = initState, action: ActionTypes): InitStateType => { // fix any
     switch (action.type) {
-        case '': {
-            return state
+        case ACTIONS_TYPES.CHANGE_IS_LOADING: {
+            return {
+                ...state,
+                ...action.payload,
+            }
         }
         default: return state
     }
 }
+//AC
+enum ACTIONS_TYPES {
+    CHANGE_IS_LOADING = 'hw10/CHANGE_IS_LOADING'
+}
+export type ActionTypes = LoadingACType
 
-export const loadingAC = (): any => {} // fix any
+type LoadingACType = {
+    type:ACTIONS_TYPES.CHANGE_IS_LOADING
+    payload:{
+        isLoading:boolean
+    }
+}
+export const loadingAC = (isLoading:boolean): LoadingACType => {
+    return {
+        type:ACTIONS_TYPES.CHANGE_IS_LOADING,
+        payload:{
+            isLoading
+        },
+    }
+} // fix any
