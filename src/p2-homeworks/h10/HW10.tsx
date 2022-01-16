@@ -15,7 +15,7 @@ function HW10() {
         dispatch(loadingAC(true))
         setTimeout(()=>{
             dispatch(loadingAC(false))
-        },3000)
+        },2000)
         console.log('loading...')
     };
 
@@ -28,7 +28,7 @@ function HW10() {
             {isLoading
                 ? (
                     <div>
-                        крутимся 3 секунды С:
+                        крутимся 2 секунды С:
                         <Backdrop open={isLoading}>
                         <CircularProgress color="inherit" />
                     </Backdrop>
