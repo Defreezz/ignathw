@@ -1,0 +1,48 @@
+.selectBlock {
+    display: block;
+    width: 150px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+
+}
+
+option {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.light {
+    background: white;
+}
+
+.light:focus {
+    box-shadow: 0 0 8px 0 #3c3c46;
+}
+
+.dark {
+    background: #c5a8a8;
+    border: #aba7a7 solid 1px;
+}
+
+.dark:focus {
+    box-shadow: 0 0 8px 0 #9d9393;
+}
+
+.red {
+    background: lightcoral;
+    border: #363636 solid 1px;
+}
+
+.red:focus {
+    box-shadow: 0 0 8px 0 #423c3c;
+}
+
+.some {
+    background: lightgreen;
+    border: #1f1f1f solid 1px;
+}

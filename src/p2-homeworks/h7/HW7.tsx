@@ -3,7 +3,7 @@ import SuperSelect from './common/c5-SuperSelect/SuperSelect'
 import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 
 
-const arr:string[] = ['x', 'y', 'z']
+const arr: string[] = ['x', 'y', 'z', '5']
 
 function HW7() {
     const [value, onChangeOption] = useState<string>(arr[1])

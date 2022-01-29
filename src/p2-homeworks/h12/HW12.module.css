@@ -1,5 +1,19 @@
+.block {
+    padding: 16px;
+    border-radius: 0 0 5px 5px;
+    height: 40vh;
+}
+
+.light {
+    background: white;
+}
+
+.light-text {
+    color: #4d4040;
+}
+
 .dark {
-    background: dimgrey;
+    background: #545457;
 }
 
 .dark-text {

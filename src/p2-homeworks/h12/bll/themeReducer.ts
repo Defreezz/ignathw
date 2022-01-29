@@ -1,14 +1,42 @@
-const initState = {
+type InitState = {
+    selectTheme: string
+    themes: string[]
+}
+type ChangeTheme = {
+    type: ACTIONS_TYPES.SET_COUNTER
+    payload: {
+        selectTheme: string
+    }
+}
+export type ActionsThemeReducer = ChangeTheme
 
+const initState: InitState = {
+    selectTheme: "light",
+    themes: ["light", "dark", "red", "some"]
 };
 
-export const themeReducer = (state = initState, action: any): any => { // fix any
+enum ACTIONS_TYPES {
+    SET_COUNTER = 'hw12/SET_THEME',
+}
+
+export const themeReducer = (state: InitState = initState, action: ActionsThemeReducer): InitState => { // fix any
     switch (action.type) {
-        case "": {
-            return state;
+        case ACTIONS_TYPES.SET_COUNTER: {
+            return {
+                ...state,
+                ...action.payload
+            }
         }
-        default: return state;
+        default:
+            return state;
     }
 };
 
-export const changeThemeC = (): any => {}; // fix any
+export const changeTheme = (theme: string): ChangeTheme => {
+    return {
+        type: ACTIONS_TYPES.SET_COUNTER,
+        payload: {
+            selectTheme: theme
+        }
+    }
+}; // fix any
