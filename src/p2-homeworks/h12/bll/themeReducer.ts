@@ -3,7 +3,7 @@ type InitState = {
     themes: string[]
 }
 type ChangeTheme = {
-    type: ACTIONS_TYPES.SET_COUNTER
+    type: ACTIONS_TYPES.SET_THEME
     payload: {
         selectTheme: string
     }
@@ -16,12 +16,12 @@ const initState: InitState = {
 };
 
 enum ACTIONS_TYPES {
-    SET_COUNTER = 'hw12/SET_THEME',
+    SET_THEME = 'hw12/SET_THEME',
 }
 
 export const themeReducer = (state: InitState = initState, action: ActionsThemeReducer): InitState => { // fix any
     switch (action.type) {
-        case ACTIONS_TYPES.SET_COUNTER: {
+        case ACTIONS_TYPES.SET_THEME: {
             return {
                 ...state,
                 ...action.payload
@@ -34,7 +34,7 @@ export const themeReducer = (state: InitState = initState, action: ActionsThemeR
 
 export const changeTheme = (theme: string): ChangeTheme => {
     return {
-        type: ACTIONS_TYPES.SET_COUNTER,
+        type: ACTIONS_TYPES.SET_THEME,
         payload: {
             selectTheme: theme
         }
