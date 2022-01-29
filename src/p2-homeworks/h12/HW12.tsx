@@ -23,8 +23,7 @@ const HW12 = React.memo(function () {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("theme", JSON.stringify(selectTheme)
-        )
+        localStorage.setItem("theme", JSON.stringify(selectTheme))
     }, [selectTheme])
 
     return (
