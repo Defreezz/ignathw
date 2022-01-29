@@ -16,6 +16,9 @@ const HW12 = React.memo(function () {
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme")
+        if(savedTheme === null)
+        dispatch(changeTheme("light"))
+        else
         dispatch(changeTheme(savedTheme && JSON.parse(savedTheme)))
     }, [])
     useEffect(() => {
