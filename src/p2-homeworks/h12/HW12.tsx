@@ -16,10 +16,10 @@ const HW12 = React.memo(function () {
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme")
-        if(savedTheme === null)
-        dispatch(changeTheme("light"))
+        if (savedTheme === null)
+            dispatch(changeTheme("light"))
         else
-        dispatch(changeTheme(savedTheme && JSON.parse(savedTheme)))
+            dispatch(changeTheme(savedTheme && JSON.parse(savedTheme)))
     }, [])
     useEffect(() => {
         localStorage.setItem("theme", JSON.stringify(selectTheme)
@@ -32,8 +32,11 @@ const HW12 = React.memo(function () {
             <span className={s[selectTheme + '-text']}>
                 homeworks 12
             </span>
-            <SuperSelect className={selectTheme} options={themes} value={selectTheme} onChangeOption={onChangeOption}/>
-
+            <SuperSelect
+                className={selectTheme}
+                options={themes}
+                value={selectTheme}
+                onChangeOption={onChangeOption}/>
             <hr/>
         </div>
     );
