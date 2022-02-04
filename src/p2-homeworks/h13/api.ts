@@ -10,12 +10,12 @@ export type commonResponce = {
 const instance = axios.create ({
     baseURL: 'https://neko-cafe-back.herokuapp.com/auth/test',
     headers:{
-        "TYK_TYK":"KGB IS COLLING"
+        "TYK_TYK":"KGB IS CALLING"
     }
 })
 
 export const hwAPI = {
     toggleCheckbox(checked:boolean){
-        return instance.post<commonResponce>('',{"success": checked})
+        return instance.post<commonResponce>('/',{"success": checked})
     }
 }
