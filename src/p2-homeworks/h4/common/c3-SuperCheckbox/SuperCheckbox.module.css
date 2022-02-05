@@ -9,6 +9,7 @@
     display: inline-flex;
     align-items: center;
     user-select: none;
+    margin: 4px 2px;
 }
 
 /* создание в label псевдоэлемента before со следующими стилями */
@@ -19,7 +20,7 @@
     height: 1em;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 1px solid #a9a9aa;
+    border: 2px solid #a9a9aa;
     border-radius: 0.35em;
     margin-right: 0.5em;
     background-repeat: no-repeat;
@@ -29,7 +30,7 @@
 
 /* стили при наведении курсора на checkbox */
 .label>input:not(:disabled):not(:checked)+span:hover::before {
-    border-color: #ffffff;
+    border-color: #2c1f1f;
 }
 
 /* стили для активного чекбокса (при нажатии на него) */
@@ -45,7 +46,7 @@
 
 /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
 .label>input:focus:not(:checked)+span::before {
-    border-color: #ffffff;
+    border-color: #0e0e0e;
 }
 
 /* стили для чекбокса, находящегося в состоянии checked */
