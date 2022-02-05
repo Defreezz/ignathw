@@ -14,35 +14,34 @@ export const HW13 = () => {
     const {selectTheme} = useSelector((state: AppStoreType) => state.theme)
 
 
-        async function sendResponse () {
-            try {
-                setIsLoading(true)
-                const res = await hwAPI.sendStatusCheckbox(checked)
-                setResponse(res)
+    async function sendResponse() {
+        try {
+            setIsLoading(true)
+            const res = await hwAPI.sendStatusCheckbox(checked)
+            setResponse(res)
+            setIsLoading(false)
+        } catch (e: any) {//хз как типизировать e
+            const error = e.response.data as Error
+            if (error) {
                 setIsLoading(false)
-            }
-            catch (e: any) {//хз как типизировать e
-                const error = e.response.data as Error
-                if (error) {
-                    setIsLoading(false)
-                    setResponse(error)
-                } else console.log('error:', e)
-            }
+                setResponse(error)
+            } else console.log('error:', e)
         }
+    }
 
     const {errorText, info} = response
     return (
-
         <div>
             <span className={s[selectTheme + '-text']}>
                 <hr/>
                 homeworks 13
             </span>
             <br/>
-            <div style={{marginTop:"15px"}}><SuperCheckbox
-                checked={checked}
-                onChangeChecked={setChecked}
-            />
+            <div style={{marginTop: "15px"}}>
+                <SuperCheckbox
+                    checked={checked}
+                    onChangeChecked={setChecked}
+                />
                 <SuperButton onClick={sendResponse}>
                     Send checkbox Status
                 </SuperButton>
@@ -54,6 +53,7 @@ export const HW13 = () => {
                         <br/>
                         {info}
                     </div>
+
                 }</div>
         </div>
     )
