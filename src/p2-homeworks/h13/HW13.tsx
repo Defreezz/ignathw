@@ -1,32 +1,56 @@
 import React, {useEffect, useState} from "react"
 import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox"
-import {commonResponce, hwAPI} from "./api"
+import {CommonResponse, Error, hwAPI} from "./api"
+import s from "../h12/HW12.module.css";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {CircularProgress} from "@material-ui/core";
 
 export const HW13 = () => {
-    const [response, setResponse] = useState<string>()
+    const [response, setResponse] = useState<CommonResponse>({errorText: '', info: ''})
     const [checked, setChecked] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const {selectTheme} = useSelector((state: AppStoreType) => state.theme)
 
     useEffect(() => {
         (async function () {
             try {
-                const res = await hwAPI.toggleCheckbox(checked)
-                setResponse(JSON.stringify(res.data))
-            } catch (err) {
-                setResponse(JSON.stringify(err))
+                setIsLoading(true)
+                const res = await hwAPI.sendStatusCheckbox(checked)
+                setResponse(res)
+                setIsLoading(false)
+            } catch (e: any) {//хз как типизировать e
+                const error = e.response.data as Error
+                if (error) {
+                    setIsLoading(false)
+                    setResponse(error)
+                } else console.log('error:', e)
             }
         }())
     }, [checked])
 
-
+    const {errorText, info} = response
     return (
+
         <div>
+            <span className={s[selectTheme + '-text']}>
+                <hr/>
+                homeworks 13
+            </span>
+            <br/>
             <SuperCheckbox
                 onChangeChecked={setChecked}
                 checked={checked}
             />
-            <div>
-                {response}
-            </div>
+            <br/>
+            {isLoading
+                ? <CircularProgress color="secondary"/>
+                : <div className={s[selectTheme + '-text']}>
+                    {errorText}
+                    <br/>
+                    {info}
+                </div>
+            }
         </div>
     )
 }

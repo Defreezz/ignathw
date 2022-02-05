@@ -4,6 +4,7 @@ import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 import {useDispatch, useSelector} from "react-redux";
 import {ActionsThemeReducer, changeTheme} from "./bll/themeReducer";
 import {AppStoreType} from "../h10/bll/store";
+import {HW13} from "../h13/HW13";
 
 //const themes = ['dark', 'red', 'some'];
 
@@ -38,6 +39,7 @@ const HW12 = React.memo(function () {
                 value={selectTheme}
                 onChangeOption={onChangeOption}/>
             <hr/>
+            <HW13/>
         </div>
     );
 })

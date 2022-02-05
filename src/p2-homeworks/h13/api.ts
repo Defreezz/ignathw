@@ -1,21 +1,28 @@
 import axios from "axios";
-export type commonResponce = {
+
+
+export type CommonResponse = {
     errorText: string
-    info: string
-    yourBody: {
-        success: boolean
+    info?: string
+    yourBody?: {
+        success?: boolean
     },
-    yourQuery: {}
+    yourQuery?: {}
 }
-const instance = axios.create ({
+export type Error = {
+    errorText: string
+    info?: string
+}
+const instance = axios.create({
     baseURL: 'https://neko-cafe-back.herokuapp.com/auth/test',
-    headers:{
-        "TYK_TYK":"KGB IS CALLING"
+    headers: {
+        "TYK_TYK": "KGB IS CALLING"
     }
 })
 
 export const hwAPI = {
-    toggleCheckbox(checked:boolean){
-        return instance.post<commonResponce>('/',{"success": checked})
+    sendStatusCheckbox(checked: boolean) {
+        return instance.post<CommonResponse>('/', {"success": checked})
+            .then(res=>res.data)
     }
 }
